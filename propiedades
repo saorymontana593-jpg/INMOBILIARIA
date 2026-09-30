@@ -1,0 +1,89 @@
+<!-- =========================
+     PROPIEDADES
+========================= -->
+<section class="roma-propiedades seccion-interna"
+         id="propiedades">
+    <header class="roma-titulo-seccion">
+        <span class="etiqueta">NUESTRO PORTAFOLIO</span>
+        <h2>Propiedades</h2>
+        <p>
+            Un espacio para descubrir las opciones
+            inmobiliarias disponibles.
+        </p>
+    </header>
+
+    <div class="propiedades-grid">
+
+        <!-- TARJETA DE PROPIEDAD 1 -->
+        <article class="propiedad-card">
+            <div class="propiedad-visual visual-uno">
+                <span class="propiedad-etiqueta">
+                    INMUEBLE
+                </span>
+                <span class="propiedad-simbolo"
+                      aria-hidden="true">⌂</span>
+            </div>
+            <div class="propiedad-info">
+                <span class="propiedad-tipo">
+                    RESIDENCIAL
+                </span>
+                <h3>Propiedad residencial</h3>
+                <p>
+                    Información y características
+                    disponibles próximamente.
+                </p>
+                <a href="#contacto">Consultar información ↗</a>
+            </div>
+        </article>
+
+        <!-- TARJETA DE PROPIEDAD 2 -->
+        <article class="propiedad-card">
+            <div class="propiedad-visual visual-dos">
+                <span class="propiedad-etiqueta">
+                    INMUEBLE
+                </span>
+                <span class="propiedad-simbolo"
+                      aria-hidden="true">▥</span>
+            </div>
+            <div class="propiedad-info">
+                <span class="propiedad-tipo">
+                    COMERCIAL
+                </span>
+                <h3>Espacio comercial</h3>
+                <p>
+                    Información y características
+                    disponibles próximamente.
+                </p>
+                <a href="#contacto">Consultar información ↗</a>
+            </div>
+        </article>
+
+        <!-- TARJETA DE PROPIEDAD 3 -->
+        <article class="propiedad-card">
+            <div class="propiedad-visual visual-tres">
+                <span class="propiedad-etiqueta">
+                    INMUEBLE
+                </span>
+                <span class="propiedad-simbolo"
+                      aria-hidden="true">◇</span>
+            </div>
+            <div class="propiedad-info">
+                <span class="propiedad-tipo">
+                    PROYECTOS
+                </span>
+                <h3>Proyecto inmobiliario</h3>
+                <p>
+                    Información y características
+                    disponibles próximamente.
+                </p>
+                <a href="#contacto">Consultar información ↗</a>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="propiedades-nota">
+        Las tarjetas son espacios de muestra. Sustituye
+        su contenido por las propiedades reales de ROMA S.A.S.
+    </p>
+</section>

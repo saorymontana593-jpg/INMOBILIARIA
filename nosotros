@@ -1,0 +1,64 @@
+<!-- =========================
+     NOSOTROS
+========================= -->
+<section class="roma-nosotros seccion-interna" id="nosotros">
+    <div class="roma-nosotros-intro">
+        <span class="etiqueta">QUIÉNES SOMOS</span>
+        <h2>Construimos confianza,<br>creamos futuro.</h2>
+        <p>
+            ROMA S.A.S. es una marca enfocada en el sector
+            inmobiliario y de la construcción. Nuestra
+            propuesta es acompañar a nuestros clientes
+            en la búsqueda de soluciones para sus espacios
+            y proyectos.
+        </p>
+        <a href="#servicios" class="roma-enlace">
+            Conoce nuestros servicios <span>↗</span>
+        </a>
+    </div>
+
+    <div class="roma-nosotros-destacado">
+        <span class="roma-decoracion">ROMA</span>
+        <div class="roma-frase">
+            <span class="etiqueta">NUESTRA ESENCIA</span>
+            <h3>Espacios con propósito.</h3>
+            <p>
+                Cada proyecto representa una oportunidad
+                para crear, transformar y construir nuevas
+                posibilidades.
+            </p>
+        </div>
+    </div>
+
+    <div class="roma-valores">
+        <article class="valor">
+            <span class="valor-numero">01</span>
+            <h3>Misión</h3>
+            <p>
+                Ofrecer soluciones inmobiliarias y de
+                construcción con atención cercana,
+                responsabilidad y compromiso.
+            </p>
+        </article>
+
+        <article class="valor">
+            <span class="valor-numero">02</span>
+            <h3>Visión</h3>
+            <p>
+                Consolidar una propuesta empresarial
+                reconocida por la calidad de su atención
+                y el desarrollo de sus proyectos.
+            </p>
+        </article>
+
+        <article class="valor">
+            <span class="valor-numero">03</span>
+            <h3>Valores</h3>
+            <p>
+                Responsabilidad, transparencia,
+                compromiso, innovación y confianza
+                en cada relación.
+            </p>
+        </article>
+    </div>
+</section>

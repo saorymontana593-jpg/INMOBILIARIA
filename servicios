@@ -1,0 +1,60 @@
+<!-- =========================
+     SERVICIOS
+========================= -->
+<section class="roma-servicios seccion-interna" id="servicios">
+    <header class="roma-titulo-seccion">
+        <span class="etiqueta">LO QUE HACEMOS</span>
+        <h2>Soluciones para cada proyecto</h2>
+        <p>
+            Explora las áreas de servicio de ROMA S.A.S.
+        </p>
+    </header>
+
+    <div class="servicios-grid">
+        <article class="servicio-card">
+            <span class="servicio-icono" aria-hidden="true">⌂</span>
+            <span class="servicio-numero">01 / INMOBILIARIA</span>
+            <h3>Asesoría inmobiliaria</h3>
+            <p>
+                Acompañamiento y orientación durante
+                la búsqueda de alternativas inmobiliarias,
+                según las necesidades de cada cliente.
+            </p>
+            <a href="#contacto">Solicitar información ↗</a>
+        </article>
+
+        <article class="servicio-card servicio-destacado">
+            <span class="servicio-icono" aria-hidden="true">▥</span>
+            <span class="servicio-numero">02 / CONSTRUCCIÓN</span>
+            <h3>Construcción</h3>
+            <p>
+                Soluciones para proyectos de construcción,
+                con atención a las necesidades y
+                características de cada propuesta.
+            </p>
+            <a href="#contacto">Solicitar información ↗</a>
+        </article>
+
+        <article class="servicio-card">
+            <span class="servicio-icono" aria-hidden="true">◇</span>
+            <span class="servicio-numero">03 / PROYECTOS</span>
+            <h3>Gestión de proyectos</h3>
+            <p>
+                Orientación para identificar necesidades,
+                organizar ideas y explorar alternativas
+                para proyectos inmobiliarios.
+            </p>
+            <a href="#contacto">Solicitar información ↗</a>
+        </article>
+    </div>
+
+    <div class="servicios-llamada">
+        <div>
+            <span class="etiqueta">¿TIENES UN PROYECTO?</span>
+            <h3>Hablemos de tus ideas.</h3>
+        </div>
+        <a href="#contacto" class="roma-boton-dorado">
+            Contáctanos <span>↗</span>
+        </a>
+    </div>
+</section>

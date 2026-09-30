@@ -1,0 +1,987 @@
+
+/* ==========================
+   CONFIGURACIÓN GENERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #11151c;
+    color: #fff;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================
+   ENCABEZADO
+========================== */
+
+.encabezado {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 14, 20, .90),
+        transparent
+    );
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-decoration: none;
+    color: #e9bf78;
+    font-family: Georgia, serif;
+}
+
+.logo-titulo {
+    font-size: 35px;
+    letter-spacing: 5px;
+}
+
+.logo-subtitulo {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navegacion a {
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .3s ease;
+}
+
+.navegacion a:hover {
+    color: #e9bf78;
+}
+
+/* ==========================
+   FONDO PARALLAX
+========================== */
+
+/*
+   La sección mide seis pantallas de alto.
+   El fondo permanece fijo visualmente mientras
+   el usuario recorre la sección con el scroll.
+*/
+
+.parallax {
+    position: relative;
+    height: 600vh;
+    background: #11151c;
+}
+
+.parallax-fondo {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    isolation: isolate;
+    background: #11151c;
+}
+
+/* LAS SEIS IMÁGENES COMPARTEN ESTE ESPACIO */
+
+.fondo-imagen {
+    position: absolute;
+    inset: -5%;
+    z-index: -2;
+    width: 110%;
+    height: 110%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.08);
+    will-change: opacity, transform;
+}
+
+/* OSCURECIMIENTO DEL FONDO */
+
+.fondo-oscuro {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, .30),
+        rgba(0, 0, 0, .40)
+    );
+    pointer-events: none;
+}
+
+/* ==========================
+   PORTADA
+========================== */
+
+.portada-texto {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    transition: opacity .2s linear;
+}
+
+.portada-etiqueta {
+    color: #e9bf78;
+    font-size: 13px;
+    letter-spacing: 7px;
+    margin-bottom: 25px;
+}
+
+.portada-texto h1 {
+    max-width: 950px;
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 6vw, 76px);
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+.portada-texto p {
+    margin-top: 22px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+/* BOTÓN DE PORTADA */
+
+.boton-portada {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 15px 35px;
+    border: 1px solid #d9ad69;
+    color: #f1cb85;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: background .3s, color .3s;
+}
+
+.boton-portada:hover {
+    background: #d9ad69;
+    color: #11151c;
+}
+
+/* INDICADOR DE SCROLL */
+
+.indicador-scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+/* ==========================
+   MENÚ PRINCIPAL
+========================== */
+
+.menu-principal {
+    position: relative;
+    z-index: 2;
+    padding: 100px 7%;
+    background: #11151c;
+    text-align: center;
+}
+
+.encabezado-seccion {
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.etiqueta {
+    color: #d9ad69;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.encabezado-seccion h2,
+.contenido h2 {
+    margin: 20px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: normal;
+}
+
+.encabezado-seccion p {
+    color: #bbb;
+    line-height: 1.8;
+}
+
+/* TARJETAS DE NAVEGACIÓN */
+
+.tarjetas-menu {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 235px;
+    padding: 28px;
+    border: 1px solid rgba(217, 173, 105, .65);
+    border-radius: 14px;
+    background: #191e27;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    background: #262c36;
+    border-color: #e9bf78;
+}
+
+.numero {
+    color: #d9ad69;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.tarjeta h3 {
+    margin: 40px 0 12px;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.tarjeta p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.flecha {
+    align-self: flex-end;
+    margin-top: auto;
+    color: #e9bf78;
+    font-size: 23px;
+}
+
+/* ==========================
+   SECCIONES INFORMATIVAS
+========================== */
+
+.seccion-informativa {
+    min-height: 400px;
+    padding: 100px 8%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: #f5f2ed;
+    color: #252525;
+}
+
+.seccion-informativa.oscura {
+    background: #191e27;
+    color: #fff;
+}
+
+.contenido {
+    max-width: 750px;
+}
+
+.contenido p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.seccion-informativa.oscura .contenido p {
+    color: #ccc;
+}
+
+/* ==========================
+   CONTACTO
+========================== */
+
+.seccion-contacto {
+    padding: 110px 7%;
+    background: #11151c;
+    text-align: center;
+}
+
+.seccion-contacto p {
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+/* ==========================
+   PIE DE PÁGINA
+========================== */
+
+.pie {
+    padding: 25px;
+    background: #0c0f14;
+    color: #aaa;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 900px) {
+    .tarjetas-menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navegacion {
+        gap: 15px;
+    }
+}
+
+/* ==========================
+   MÓVIL
+========================== */
+
+@media (max-width: 600px) {
+    .encabezado {
+        min-height: 85px;
+        padding: 16px 5%;
+        align-items: flex-start;
+    }
+
+    .logo-titulo {
+        font-size: 25px;
+    }
+
+    .logo-subtitulo {
+        font-size: 7px;
+    }
+
+    .navegacion {
+        max-width: 58%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navegacion a {
+        font-size: 9px;
+    }
+
+    .portada-texto h1 {
+        font-size: 38px;
+    }
+
+    .portada-texto p {
+        font-size: 13px;
+    }
+
+    .menu-principal {
+        padding: 75px 6%;
+    }
+
+    .tarjetas-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        min-height: 190px;
+    }
+}
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* ==================================
+   ESTILOS DE LAS SECCIONES INTERNAS
+================================== */
+
+.seccion-interna {
+    scroll-margin-top: 20px;
+}
+
+/* ==================================
+   NOSOTROS
+================================== */
+
+.roma-nosotros {
+    background: #f5f2ed;
+    color: #20232a;
+    padding: 100px 8%;
+}
+
+.roma-nosotros-intro {
+    max-width: 850px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.roma-nosotros-intro h2 {
+    margin: 22px 0;
+    font: normal clamp(38px, 6vw, 70px)/1.15 Georgia, serif;
+}
+
+.roma-nosotros-intro > p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #656565;
+    line-height: 1.9;
+}
+
+.roma-enlace {
+    display: inline-block;
+    margin-top: 28px;
+    color: #98703a;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.roma-enlace span {
+    margin-left: 8px;
+}
+
+.roma-nosotros-destacado {
+    position: relative;
+    min-height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 25px;
+    overflow: hidden;
+    background: #11151c;
+    color: #fff;
+    text-align: center;
+}
+
+.roma-decoracion {
+    position: absolute;
+    font: bold clamp(100px, 25vw, 280px) Georgia, serif;
+    letter-spacing: 10px;
+    color: rgba(233, 191, 120, .07);
+    pointer-events: none;
+}
+
+.roma-frase {
+    position: relative;
+    max-width: 550px;
+}
+
+.roma-frase h3 {
+    margin: 20px 0;
+    color: #e9bf78;
+    font: normal clamp(28px, 4vw, 44px) Georgia, serif;
+}
+
+.roma-frase p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.roma-valores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 70px;
+}
+
+.valor {
+    padding: 25px 10px;
+    border-top: 1px solid #c8a56e;
+}
+
+.valor-numero {
+    color: #a67c42;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.valor h3 {
+    margin: 18px 0 12px;
+    font: normal 26px Georgia, serif;
+}
+
+.valor p {
+    color: #686868;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==================================
+   SERVICIOS
+================================== */
+
+.roma-servicios {
+    padding: 100px 7%;
+    background: #11151c;
+    color: #fff;
+}
+
+.roma-titulo-seccion {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.roma-titulo-seccion h2 {
+    margin: 20px 0;
+    font: normal clamp(35px, 5vw, 58px) Georgia, serif;
+}
+
+.roma-titulo-seccion > p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.servicio-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    padding: 32px;
+    border: 1px solid rgba(217, 173, 105, .45);
+    border-radius: 14px;
+    background: #191e27;
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-6px);
+    border-color: #e9bf78;
+}
+
+.servicio-destacado {
+    background: #26221c;
+    border-color: #d9ad69;
+}
+
+.servicio-icono {
+    color: #e9bf78;
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.servicio-numero {
+    color: #d9ad69;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.servicio-card h3 {
+    margin: 20px 0 15px;
+    font: normal 25px Georgia, serif;
+}
+
+.servicio-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.servicio-card a {
+    margin-top: auto;
+    padding-top: 24px;
+    color: #e9bf78;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.servicios-llamada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 65px;
+    padding: 30px;
+    border: 1px solid rgba(217, 173, 105, .35);
+    background: #191e27;
+}
+
+.servicios-llamada h3 {
+    margin-top: 12px;
+    font: normal 28px Georgia, serif;
+}
+
+/* ==================================
+   PROPIEDADES
+================================== */
+
+.roma-propiedades {
+    padding: 100px 7%;
+    background: #f5f2ed;
+    color: #222;
+}
+
+.roma-propiedades .roma-titulo-seccion > p {
+    color: #777;
+}
+
+.propiedades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.propiedad-card {
+    overflow: hidden;
+    border: 1px solid #e2dcd2;
+    border-radius: 13px;
+    background: #fff;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.propiedad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .10);
+}
+
+.propiedad-visual {
+    position: relative;
+    height: 230px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-color: #1c2530;
+}
+
+.visual-uno {
+    background: linear-gradient(135deg, #263747, #9b8a70);
+}
+
+.visual-dos {
+    background: linear-gradient(135deg, #30363b, #a88b61);
+}
+
+.visual-tres {
+    background: linear-gradient(135deg, #1c2731, #82715e);
+}
+
+.propiedad-etiqueta {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 8px 12px;
+    background: #e9bf78;
+    color: #1b1b1b;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.propiedad-simbolo {
+    color: rgba(255, 255, 255, .8);
+    font: normal 90px Georgia, serif;
+}
+
+.propiedad-info {
+    padding: 25px;
+}
+
+.propiedad-tipo {
+    color: #9a753e;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.propiedad-info h3 {
+    margin: 14px 0;
+    font: normal 23px Georgia, serif;
+}
+
+.propiedad-info p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.propiedad-info a {
+    display: inline-block;
+    margin-top: 22px;
+    color: #98703a;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.propiedades-nota {
+    margin-top: 30px;
+    color: #777;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* ==================================
+   CONTACTO
+================================== */
+
+.roma-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 70px;
+    padding: 100px 8%;
+    background: #11151c;
+    color: #fff;
+}
+
+.contacto-intro {
+    padding-top: 20px;
+}
+
+.contacto-intro h2 {
+    margin: 25px 0;
+    color: #e9bf78;
+    font: normal clamp(40px, 6vw, 68px)/1.15 Georgia, serif;
+}
+
+.contacto-intro > p {
+    max-width: 420px;
+    color: #bbb;
+    line-height: 1.9;
+}
+
+.contacto-dato {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.contacto-icono {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #d9ad69;
+    border-radius: 50%;
+    color: #e9bf78;
+    font-size: 20px;
+}
+
+.contacto-dato div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.contacto-dato small {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.contacto-dato a {
+    color: #e9bf78;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.contacto-formulario {
+    padding: 35px;
+    border: 1px solid rgba(217, 173, 105, .45);
+    border-radius: 14px;
+    background: #191e27;
+}
+
+.contacto-formulario h3 {
+    font: normal 29px Georgia, serif;
+}
+
+.contacto-formulario > p {
+    margin: 12px 0 28px;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    color: #e8e8e8;
+    font-size: 12px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #424751;
+    border-radius: 6px;
+    outline: none;
+    background: #11151c;
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #d9ad69;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #8b8e94;
+}
+
+.roma-boton-dorado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 25px;
+    border: 1px solid #d9ad69;
+    background: #d9ad69;
+    color: #11151c;
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .3s, color .3s;
+}
+
+.roma-boton-dorado:hover {
+    background: transparent;
+    color: #e9bf78;
+}
+
+.formulario-nota {
+    margin-top: 15px;
+    color: #aaa;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* ==================================
+   ADAPTACIÓN A TABLET
+================================== */
+
+@media (max-width: 900px) {
+    .roma-valores {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .servicios-grid,
+    .propiedades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .roma-contacto {
+        gap: 35px;
+        padding: 80px 6%;
+    }
+}
+
+/* ==================================
+   ADAPTACIÓN A MÓVILES
+================================== */
+
+@media (max-width: 600px) {
+    .roma-nosotros,
+    .roma-servicios,
+    .roma-propiedades {
+        padding: 75px 6%;
+    }
+
+    .roma-nosotros-intro {
+        margin-bottom: 55px;
+    }
+
+    .servicios-grid,
+    .propiedades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-llamada {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .roma-contacto {
+        grid-template-columns: 1fr;
+        padding: 75px 6%;
+    }
+
+    .contacto-formulario {
+        padding: 24px 18px;
+    }
+}

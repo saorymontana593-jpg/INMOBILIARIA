@@ -1,0 +1,113 @@
+<!-- =========================
+     CONTÁCTANOS
+========================= -->
+<section class="roma-contacto seccion-interna" id="contacto">
+    <div class="contacto-intro">
+        <span class="etiqueta">ESTAMOS PARA AYUDARTE</span>
+        <h2>Hagamos realidad<br>tus ideas.</h2>
+        <p>
+            Cuéntanos qué necesitas y nos pondremos
+            en contacto contigo.
+        </p>
+
+        <div class="contacto-dato">
+            <span class="contacto-icono" aria-hidden="true">✉</span>
+            <div>
+                <small>Correo electrónico</small>
+                <a href="mailto:contacto@roma.com">
+                    contacto@roma.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contacto-formulario">
+        <h3>Envíanos un mensaje</h3>
+        <p>
+            Completa los siguientes campos para
+            preparar tu consulta.
+        </p>
+
+        <form id="formulario-contacto">
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="tucorreo@ejemplo.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="asunto">¿Sobre qué deseas consultar?</label>
+                <select id="asunto" name="asunto" required>
+                    <option value="" disabled selected>
+                        Selecciona una opción
+                    </option>
+                    <option value="Información general">
+                        Información general
+                    </option>
+                    <option value="Servicios">
+                        Servicios
+                    </option>
+                    <option value="Propiedades">
+                        Propiedades
+                    </option>
+                    <option value="Construcción">
+                        Construcción
+                    </option>
+                    <option value="Otro">
+                        Otro
+                    </option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribe tu mensaje..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="roma-boton-dorado">
+                Preparar mensaje ↗
+            </button>
+            <p class="formulario-nota">
+                El botón abrirá tu aplicación de correo
+                para que puedas enviar el mensaje.
+            </p>
+        </form>
+    </div>
+</section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>
+            © <span id="anio"></span> ROMA S.A.S.
+            Todos los derechos reservados.
+        </p>
+    </footer>
+
+</body>
+</html>
